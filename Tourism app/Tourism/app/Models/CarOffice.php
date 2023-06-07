@@ -12,7 +12,6 @@ class CarOffice extends Model
     protected $table = 'car_offices';
 
     protected $fillable = [
-        'type',
         'name',
         'phone',
         'country_id',

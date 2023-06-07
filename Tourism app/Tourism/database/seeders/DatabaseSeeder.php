@@ -18,8 +18,13 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
+            imagesSeeder::class,
             CountrySeeder::class,
+            categorySeeder::class,
+            touristDesSeeder::class,
             HotelSeeder::class,
+            carOfficeSeeder::class,
+            carSeeder::class
         ]);
     }
 }

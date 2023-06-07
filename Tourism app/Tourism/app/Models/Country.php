@@ -10,7 +10,12 @@ class Country extends Model
     use HasFactory;
     protected $table = 'countries';
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'img_id',
+        'details',
+        'popular',
+    ];
 
     public function destinations() {
         return $this->hasMany(TouristDes::class);
@@ -23,4 +28,9 @@ class Country extends Model
     public function offices() {
         return $this->hasMany(CarOffice::class);
     }
+
+    public function image() {
+        return $this->belongsTo(Image::class , 'img_id');
+    }
+
 }
