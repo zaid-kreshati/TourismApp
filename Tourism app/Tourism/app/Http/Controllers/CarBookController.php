@@ -16,9 +16,19 @@ class CarBookController extends Controller
     public function index()
     {
         $id=auth()->user()->id;
-        $CarBook= CarBook::where('user_id',$id)->get();
 
-        return response()->json($CarBook);
+        $reservations = CarBook::with('car')->where('user_id',$id)->get();
+
+        $resp = $reservations->map(function($resrev) {
+            return [
+                'get_date'=> $resrev->get_date,
+                'drop_date'=> $resrev->drop_date,
+                'total_price'=> $resrev->total_price,
+                'car'=> $resrev->car->type
+            ];
+        });
+
+        return response()->json($resp);
     }
 
 

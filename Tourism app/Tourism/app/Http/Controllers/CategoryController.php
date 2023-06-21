@@ -17,11 +17,21 @@ class CategoryController extends Controller
         return response()->json($Category);
     }
 
-    //search_for_tourist_des_by_its_cat_id
+    //Get All destinations by category
     public function search($id){
-        $cat = TouristDes::select('*')->where('categ_id', $id )
-        ->get()->toArray();
-        return response()->json($cat);
+        $desinations = TouristDes::with('image' , 'category' , 'country')->where('categ_id', $id )->get();
+
+        $data = $desinations->map(function($dest) {
+            return [
+                'name'=> $dest->name,
+                'details'=> $dest->details,
+                'category'=> $dest->category->name,
+                'image'=> $dest->image->data,
+                'country'=> $dest->country->name,
+            ];
+        });
+
+        return response()->json($data);
 
     }
 

@@ -27,6 +27,18 @@ class CountryController extends Controller
         return response()->json($data, 200);
     }
 
+    // get country by click 
+    public function details($id) {
+        $country = Country::with('image')->where('id' , $id)->first();
+        $resp = [
+            'name' => $country->name,
+            'details' => $country->details,
+            'popular' => $country->popular,
+            'image' => $country->image->data,
+        ];
+        return response()->json($resp);
+
+    }
     //get_most_popular
     public function popular()
     {
@@ -48,10 +60,19 @@ class CountryController extends Controller
     //search_for_country_by_its_name
     public function search($name)
     {
-        $res = Country::select('name' , 'id' , 'details')->where('name', 'LIKE', '%' . $name . '%')
-            ->get()->toArray();
+        $countries = Country::with('image')->where('name', 'LIKE', '%' . $name . '%')->get();
+        $data = $countries->map(function ($country) {
+            return [
+                'id' => $country->id,
+                'name' => $country->name,
+                'details' => $country->details,
+                'popular' => $country->popular,
+                'image' => $country->image->data
+            ];
+        });
 
-        return response()->json($res);
+        return response()->json($data);
+
     }
 
     //add_new_country

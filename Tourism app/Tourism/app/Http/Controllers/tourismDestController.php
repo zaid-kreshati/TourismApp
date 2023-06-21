@@ -11,6 +11,23 @@ use Validator;
 class tourismDestController extends Controller
 {
 
+    // All Destinations 
+    public function all() {
+        $destenations = TouristDes::with('image' , 'country' , 'category')->get();
+
+        $data = $destenations->map(function ($dest) {
+            return [
+                'name' => $dest->name,
+                'details' => $dest->details,
+                'category' => $dest->category->name,
+                'image' => $dest->image->data,
+                'country' => $dest->country->name,
+            ];
+        });
+
+        return response()->json($data);
+
+    }
     // Get Destination by country 
     public function getDestByCountry($country_id)
     {

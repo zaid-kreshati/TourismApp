@@ -19,6 +19,6 @@ class CarBook extends Model
     ];
 
     public function car() {
-        return $this->hasOne(Car::class , 'car_id');
+        return $this->belongsTo(Car::class , 'car_id');
     }
 }

@@ -41,13 +41,16 @@ Route::get('carsInOffice/{id}', [CarsController::class, 'carsInOffice']);
 
 //category
 Route::get('ctagories/all', [CategoryController::class, 'index']);
-Route::get('search/{cat_id}', [CategoryController::class, 'search']);
+Route::get('destByCateg/{cat_id}', [CategoryController::class, 'search']);
 
 //country
 Route::get('countries/all', [CountryController::class, 'index']);
 Route::get('popular', [CountryController::class, 'popular']);
 Route::get('search_country/{name}', [CountryController::class, 'search']);
+Route::get('country/det/{id}', [CountryController::class, 'details']);
+
 // Destinations Tourism
+Route::get('dest/all', [tourismDestController::class, 'all']);
 Route::get('destByCountry/{id}' , [tourismDestController::class , 'getDestByCountry']);
 Route::get('search_dest/{name}', [tourismDestController::class, 'search']);
 
@@ -56,12 +59,14 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth:user-api', 'scopes:user
     // authenticated staff routes here 
 
     // Hotel Booking
-    Route::post('bookHotel' , [hotelBookingController::class , 'bookHotel']);
-    Route::post('bookStore' , [hotelBookingController::class , 'bookStore']);
+    Route::post('bookHotel/{id}' , [hotelBookingController::class , 'bookHotel']);
+    Route::post('bookStore/{id}' , [hotelBookingController::class , 'bookStore']);
+    
     
     // Booking Car
     Route::post('bookCar', [CarBookController::class, 'bookCar']);
     Route::post('carConfirm', [CarBookController::class, 'confirm']);
+    Route::get('allReserv/car', [CarBookController::class, 'index']);
 
 
     Route::get('logout', [LoginController::class, 'userLogout']);

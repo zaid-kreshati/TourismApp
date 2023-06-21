@@ -14,13 +14,12 @@ class hotelBookingController extends Controller
 {
 
     // Book Hotel
-    public function bookHotel(Request $request)
+    public function bookHotel(Request $request , $hotel_id)
     {
         $validator = Validator::make($request->all(), [
             'check_in' => 'required',
             'check_out' => 'required',
             'num_room' => 'required',
-            'hotel_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -29,7 +28,7 @@ class hotelBookingController extends Controller
 
 
         $user = Auth::id();
-        $hotel = Hotel::where('id', $request['hotel_id'])->select('name', 'id', 'price_night')->first();
+        $hotel = Hotel::where('id', $hotel_id)->select('name', 'id', 'price_night')->first();
 
 
         $date1 = Carbon::parse($request['check_in']);
@@ -56,14 +55,13 @@ class hotelBookingController extends Controller
 
 
     // Store Book details
-    public function bookStore(Request $request)
+    public function bookStore(Request $request , $hotel_id)
     {
         $validator = Validator::make($request->all(), [
             'check_in' => 'required',
             'check_out' => 'required',
             'num_room' => 'required',
             'total_price' => 'required',
-            'hotel_id' => 'required'
         ]);
 
         $user = Auth::id();
@@ -77,7 +75,7 @@ class hotelBookingController extends Controller
             'num_room' => intval($request->num_room),
             'total_price' => intval($request->total_price),
             'user_id' => $user,
-            'hotel_id' => intval($request->hotel_id),
+            'hotel_id' => intval($hotel_id),
         ]);
 
         return response()->json([
