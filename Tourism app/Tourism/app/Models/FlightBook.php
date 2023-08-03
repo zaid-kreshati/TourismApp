@@ -28,4 +28,4 @@ class FlightBook extends Model
         return $this->belongsTo(Flight::class, 'flight_id');
     }
 
-}
+} 

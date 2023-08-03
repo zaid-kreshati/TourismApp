@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use Validator;
@@ -76,29 +77,34 @@ class CountryController extends Controller
     }
 
     //add_new_country
-    public function store(Request $request)
+    public function add(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'details' => 'required|string',
-            'most_popular' => 'required|boolean',
-            'img_id' => 'required'
+            'most_popular' => 'required',
+            'image' => 'required'
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
+        $image = new Image;
+        $image->data = $request->file('image')->getClientOriginalName();
+        $image->save();
 
-        $Country = Country::create([
+
+        $country = Country::create([
             'name' => $request->name,
-            'img_id' => $request->img_id,
+            'img_id' => $image->id,
             'details' => $request->details,
-            'most_popular' => $request->most_popular,
+            'popular' => boolval($request->most_popular),
         ]);
 
         return response()->json([
-            'message' => "$Country->name added successfully",
+            'message' => "added successfully",
+            'data'=> $country
         ]);
 
     }

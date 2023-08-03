@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\flightBookingController;
+use App\Http\Controllers\flightsController;
 use App\Http\Controllers\hotelBookingController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\CarOfficeController;
@@ -7,6 +9,7 @@ use App\Http\Controllers\CarsController;
 use App\Http\Controllers\CarBookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\favoritesController;
 use App\Http\Controllers\tourismDestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -55,18 +58,32 @@ Route::get('destByCountry/{id}' , [tourismDestController::class , 'getDestByCoun
 Route::get('search_dest/{name}', [tourismDestController::class, 'search']);
 
 
+// Flights
+Route::get('flight/all', [flightsController::class, 'allFlights']);
+Route::get('flightByID/{id}', [flightsController::class, 'getFlightBy']);
+Route::get('flight/search/{name}', [flightsController::class, 'search']);
+
+
 Route::group(['prefix' => 'user', 'middleware' => ['auth:user-api', 'scopes:user']], function () {
     // authenticated staff routes here 
 
     // Hotel Booking
     Route::post('bookHotel/{id}' , [hotelBookingController::class , 'bookHotel']);
-    Route::post('bookStore/{id}' , [hotelBookingController::class , 'bookStore']);
+    Route::get('allResrevations' , [hotelBookingController::class , 'allResrevation']);
     
     
     // Booking Car
     Route::post('bookCar', [CarBookController::class, 'bookCar']);
-    Route::post('carConfirm', [CarBookController::class, 'confirm']);
     Route::get('allReserv/car', [CarBookController::class, 'index']);
+
+    // Add Destenatin To Faovrite 
+    Route::get('addToFav/{id}', [favoritesController::class, 'addToFav']);
+    Route::get('allFav' , [favoritesController::class , 'allFav']);
+
+
+    // Booking flight
+    Route::post('flight/book/{id}' , [flightBookingController::class , 'bookFlight']);
+    Route::get('all/res/flights' ,[flightBookingController::class , 'allReserv']);
 
 
     Route::get('logout', [LoginController::class, 'userLogout']);

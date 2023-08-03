@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Favorite extends Model
 {
     use HasFactory;
-    protected $table = 'user_id';
+    protected $table = 'favorites';
 
     protected $fillable = [
         'user_id',
@@ -20,6 +20,6 @@ class Favorite extends Model
     }
 
     public function destinations() {
-        return $this->hasMany(TouristDes::class , 'des_id');
+        return $this->belongsTo(TouristDes::class , 'des_id');
     }
 }

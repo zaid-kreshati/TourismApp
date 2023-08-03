@@ -7,7 +7,7 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\CarBook;
-
+use Carbon\Carbon;
 use Validator;
 
 class CarsController extends Controller
@@ -37,11 +37,14 @@ class CarsController extends Controller
     //get_all_available_cars
     public function index()
     {
-        $all_Books=CarBook::orderBy('drop_date','asc');
-        foreach ($all_Books as $available) {
-            if($available->drop_date <= now()){
-                $car_id=$available->car_id;
-                $car=Car::find($car_id);
+
+        $allBookCars = CarBook::get();
+        
+        foreach($allBookCars as $available) {
+            if($available->drop_date < now()) 
+            {
+                $car_id= $available->car_id;
+                $car = Car::find($car_id);
                 $car->isRental = false;
                 $car->save();
             }
@@ -52,12 +55,24 @@ class CarsController extends Controller
                 $car->save();
             }
         }
-        $cars= Car::all()->where('isRental',false);
-        return response()->json($cars);
+
+        $cars= Car::with('image' , 'office')->where('isRental',false)->get();
+        $data = $cars->map(function ($car) {
+            return [
+                'id' => $car->id,
+                'tyoe' => $car->type,
+                'num_person' => $car->num_person,
+                'price_day' => $car->price_day,
+                'image' => $car->image->data,
+                'office' => $car->office->name,
+            ];
+        });
+
+        return response()->json($data);
     }
 
     //add_new_car
-    public function store(Request $request)
+    public function add(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'office' => 'required',
@@ -72,7 +87,7 @@ class CarsController extends Controller
         }
 
         $image = new Image;
-        $image->path = $request->file('image')->getClientOriginalName();
+        $image->data = $request->file('image')->getClientOriginalName();
         $image->save();
 
         $office_id = CarOffice::where('name' , $request['office'] )->pluck('id')->first();
@@ -89,6 +104,7 @@ class CarsController extends Controller
 
         return response()->json([
             'message' =>"$Car->name added successfully",
+            'data'=> $Car
         ]);
 
     }

@@ -14,11 +14,11 @@ class hotelBookingController extends Controller
 {
 
     // Book Hotel
-    public function bookHotel(Request $request , $hotel_id)
+    public function bookHotel(Request $request, $hotel_id)
     {
         $validator = Validator::make($request->all(), [
-            'check_in' => 'required',
-            'check_out' => 'required',
+            'check_in' => 'required|date|after:now',
+            'check_out' => 'required|date|after:get_date',
             'num_room' => 'required',
         ]);
 
@@ -40,7 +40,19 @@ class hotelBookingController extends Controller
 
         $totalPrice = $hotel['price_night'] * $request['num_room'] * $totaldays;
 
+
+        HotelBook::create([
+            'check_in' => $date1,
+            'check_out' => $date1,
+            'num_room' => intval($request->num_room),
+            'total_price' => $totalPrice,
+            'user_id' => $user,
+            'hotel_id' => intval($hotel->id),
+        ]);
+
+
         return response()->json([
+            'message' => "Book created check your box",
             'check_in' => $request['check_in'],
             'check_out' => $request['check_out'],
             'num_rooms' => $request['num_room'],
@@ -54,38 +66,24 @@ class hotelBookingController extends Controller
     }
 
 
-    // Store Book details
-    public function bookStore(Request $request , $hotel_id)
-    {
-        $validator = Validator::make($request->all(), [
-            'check_in' => 'required',
-            'check_out' => 'required',
-            'num_room' => 'required',
-            'total_price' => 'required',
-        ]);
-
+    // get all reservations 
+    public function allResrevation() {
         $user = Auth::id();
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
 
-        HotelBook::create([
-            'check_in' => $request->check_in,
-            'check_out' => $request->check_out,
-            'num_room' => intval($request->num_room),
-            'total_price' => intval($request->total_price),
-            'user_id' => $user,
-            'hotel_id' => intval($hotel_id),
-        ]);
+        $allRes = HotelBook::with('hotel')->where('user_id' , $user)->get();
 
-        return response()->json([
-            'message' => "Book created check your box",
-        ]);
 
+        $data = $allRes->map(function ($res) {
+            return [
+                'check_in' => $res->check_in,
+                'check_out' => $res->check_out,
+                'num_room' => $res->num_room,
+                'total_price' => $res->total_price,
+                'hotel' => $res->hotel->name,
+            ];
+        });
+        return response()->json($data);
     }
-
-
-    
 
 
 

@@ -24,6 +24,6 @@ class Flight extends Model
 
     public function image()
     {
-        $this->hasOne(Image::class, 'img_id');
+        return $this->belongsTo(Image::class, 'img_id');
     }
 }

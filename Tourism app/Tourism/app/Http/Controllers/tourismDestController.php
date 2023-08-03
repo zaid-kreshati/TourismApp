@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Country;
 use App\Models\Image;
 use App\Models\TouristDes;
@@ -75,7 +76,9 @@ class tourismDestController extends Controller
             'name' => 'required|string|max:255',
             'details' => 'required|string',
             'country' => 'required|string',
-            'image' => 'required'
+            'category' => 'required|string',
+            'image' => 'required',
+            
         ]);
 
         // 'category' => 'required',
@@ -86,27 +89,26 @@ class tourismDestController extends Controller
 
 
         $country_id = Country::where('name', $request['country'])->pluck('id')->first();
-        // $categ_id = Country::where('name' , $request['category'])->pluck('id')->first();
+        $categ_id = Category::where('name' , $request['category'])->pluck('id')->first();
 
         $image = new Image;
-        $image->path = $request->file('image')->getClientOriginalName();
+        $image->data = $request->file('image')->getClientOriginalName();
         $image->save();
 
 
-        // 'categ_id'=> $categ_id,
 
         $tourismDes = TouristDes::create([
             'name' => $request->name,
             'details' => $request->details,
             'country_id' => $country_id,
-            'categ_id' => 2,
+            'categ_id' => $categ_id,
             'img_id' => $image->id
         ]);
 
 
         return response()->json([
             'Destination' => $tourismDes,
-            'Image' => $tourismDes->image()
+            'Image' => $tourismDes->image->data
         ]);
 
     }

@@ -27,7 +27,7 @@ class Image extends Model
     // }
 
     // public function flight() {
-    //     return $this->belongsTo(Flight::class);
+    //     return $this->hasOne(Flight::class);
     // }
 
     // public function hotel() {

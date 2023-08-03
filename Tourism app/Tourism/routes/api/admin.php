@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\flightsController;
 use App\Http\Controllers\tourismDestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\hotelBookingController;
 use App\Http\Controllers\CarOfficeController;
+use App\Http\Controllers\hotelController;
+use App\Http\Controllers\CarsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +30,8 @@ Route::post('admin/add' , [tourismDestController::class , 'add']);
 
 // Hotels
 Route::get('admin/getHotel/{id}' , [hotelBookingController::class , 'getHotel']);
+// Add Hotel
+Route::post('admin/hotel/add' , [hotelController::class , 'add']);
 
 
 //Car Office (add,delete,update)
@@ -40,14 +46,23 @@ Route::delete('delete_category/{id}', [CategoryController::class, 'destroy']);
 Route::post('update_category/{id}', [CategoryController::class, 'update']);
 
 //Car (add,delete,update)
-Route::post('add_Car', [CarsController::class, 'store']);
+Route::post('admin/add_Car', [CarsController::class, 'add']);
 Route::delete('delete_Car/{id}', [CarsController::class, 'destroy']);
 Route::post('update_Car/{id}', [CarsController::class, 'update']);
 
 
+// Add Country
+Route::post('admin/country/add', [CountryController::class, 'add']);
+
+// Add Flight with image 
+Route::post('flight/add', [flightsController::class, 'add']);
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin-api', 'scopes:admin']], function () {
     // authenticated staff routes here 
-    
+
+
+    // Add New Dest 
+    Route::post('addDest', [tourismDestController::class, 'add']);
 
     Route::get('logout' , [LoginController::class , 'adminLogout']);
 });
