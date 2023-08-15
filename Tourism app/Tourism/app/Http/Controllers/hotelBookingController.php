@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\HelloMail;
 use App\Models\Hotel;
 use App\Models\HotelBook;
 use App\Models\Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 use Validator;
 
 class hotelBookingController extends Controller
@@ -51,6 +53,17 @@ class hotelBookingController extends Controller
         ]);
 
 
+        $emailData = [
+            'subject' => 'Reservation Hotel',
+            'date' => 'check in: ' . $date1->format('Y-m-d') . ', check out: ' . $date2->format('Y-m-d'),
+            'body' => 'Hotel Booked '.$hotel->name . ' , The number of rooms: '. intval($request->num_room) ,
+            'time' => now()
+        ];
+        $email = Auth::user()->email;
+        Mail::to($email)->send(new HelloMail($emailData));
+
+
+        
         return response()->json([
             'message' => "Book created check your box",
             'check_in' => $request['check_in'],

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\HelloMail;
 use App\Models\Flight;
 use App\Models\FlightBook;
 use Auth;
 use Illuminate\Http\Request;
+use Mail;
 use Validator;
 
 class flightBookingController extends Controller
@@ -22,7 +24,7 @@ class flightBookingController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        $flight = Flight::where('id', $flight_id)->select('from', 'to', 'ticket_price')->first();
+        $flight = Flight::where('id', $flight_id)->select('from', 'to', 'ticket_price' , 'date' , 'time')->first();
 
         $totalPrice = $flight['ticket_price'] * $request['num_person'];
 
@@ -33,6 +35,19 @@ class flightBookingController extends Controller
             'user_id' => $user,
             'flight_id' => $flight_id,
         ]);
+
+
+        $emailData = [
+            'subject' => 'Reservation Flight',
+            'date'=> $flight->date,
+            'body' => 'Flight Booked from ' . $flight->from .' To ' . $flight->to,
+            'time' => $flight->time
+        ];
+        $email = Auth::user()->email;
+        Mail::to($email)->send(new HelloMail($emailData));
+
+
+
 
 
         return response()->json([

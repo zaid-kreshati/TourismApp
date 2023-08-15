@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\helloMail;
 use Auth;
 use Illuminate\Http\Request;
 use App\Models\CarBook;
 use Carbon\Carbon;
 use App\Models\Car;
+use Mail;
 use Validator;
 
 
@@ -33,12 +35,11 @@ class CarBookController extends Controller
 
 
     //get_total_price
-    public function bookCar(Request $request)
+    public function bookCar(Request $request , $car_id)
     {
         $validator = Validator::make($request->all(), [
             'get_date' => 'required|date|after:now',
             'drop_date' => 'required|date|after:get_date',
-            'car_id' => 'required'
         ]);
 
 
@@ -47,7 +48,7 @@ class CarBookController extends Controller
         }
 
         $user = Auth::id();
-        $car = Car::where('id', $request['car_id'])->select('type', 'id', 'price_day' ,'isRental')->first();
+        $car = Car::where('id', $car_id)->select('type', 'id', 'price_day' ,'isRental')->first();
 
         $date1 = Carbon::parse($request['get_date']);
         $date2 = Carbon::parse($request['drop_date']);
@@ -68,6 +69,18 @@ class CarBookController extends Controller
 
             $car->isRental = true;
             $car->save();
+
+
+        $emailData = [
+            'subject' => 'Reservation Car',
+            'date'=> 'Get in : '. $date1->format('Y-m-d') . ' Drop: ' . $date2->format('Y-m-d'),
+            'body' => 'Car Booked , Type: '. $car->type,
+            'time' => now()
+        ];
+        $email = Auth::user()->email;
+        Mail::to($email)->send(new HelloMail($emailData));
+
+
 
         return response()->json([
             'message' => " reservation successful",

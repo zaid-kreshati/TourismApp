@@ -16,6 +16,7 @@ class flightsController extends Controller
 
         $data = $flights->map(function($flight) {
             return [
+                'id'=> $flight->id,
                 'from'=> $flight->from,
                 'to'=> $flight->to,
                 'date'=> $flight->date,

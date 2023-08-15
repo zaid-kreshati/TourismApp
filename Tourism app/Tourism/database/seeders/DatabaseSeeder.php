@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             touristDesSeeder::class,
             HotelSeeder::class,
             carOfficeSeeder::class,
-            carSeeder::class
+            carSeeder::class,
+            flightsSeeder::class
         ]);
     }
 }

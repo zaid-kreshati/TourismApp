@@ -35,32 +35,33 @@ Route::get('hotel/country/{id}', [hotelController::class, 'hotelsByCountry']);
 Route::get('hotel/{id}', [hotelController::class, 'getHotel']);
 
 // Testing Car Offices
-Route::get('all_offices', [CarOfficeController::class, 'index']);
-Route::get('officeIn/country/{id}' , [CarOfficeController::class , 'officeByCountry']);
+Route::get('office/all', [CarOfficeController::class, 'index']);
+Route::get('office/in/country/{id}' , [CarOfficeController::class , 'officeByCountry']);
 
 // Cars 
-Route::get('all_Cars', [CarsController::class, 'index']);
-Route::get('carsInOffice/{id}', [CarsController::class, 'carsInOffice']);
+Route::get('cars/all', [CarsController::class, 'index']);
+Route::get('cars/in/office/{id}', [CarsController::class, 'carsInOffice']);
+
 
 //category
 Route::get('ctagories/all', [CategoryController::class, 'index']);
-Route::get('destByCateg/{cat_id}', [CategoryController::class, 'search']);
+Route::get('destinations/ByCateg/{cat_id}', [CategoryController::class, 'search']);
 
 //country
 Route::get('countries/all', [CountryController::class, 'index']);
-Route::get('popular', [CountryController::class, 'popular']);
-Route::get('search_country/{name}', [CountryController::class, 'search']);
-Route::get('country/det/{id}', [CountryController::class, 'details']);
+Route::get('countries/popular', [CountryController::class, 'popular']);
+Route::get('countries/search/{name}', [CountryController::class, 'search']);
+Route::get('country/details/{id}', [CountryController::class, 'details']);
 
 // Destinations Tourism
 Route::get('dest/all', [tourismDestController::class, 'all']);
-Route::get('destByCountry/{id}' , [tourismDestController::class , 'getDestByCountry']);
-Route::get('search_dest/{name}', [tourismDestController::class, 'search']);
+Route::get('dest/in/country/{id}' , [tourismDestController::class , 'getDestByCountry']);
+Route::get('dest/search/{name}', [tourismDestController::class, 'search']);
 
 
 // Flights
 Route::get('flight/all', [flightsController::class, 'allFlights']);
-Route::get('flightByID/{id}', [flightsController::class, 'getFlightBy']);
+Route::get('flight/details/{id}', [flightsController::class, 'getFlightBy']);
 Route::get('flight/search/{name}', [flightsController::class, 'search']);
 
 
@@ -68,22 +69,22 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth:user-api', 'scopes:user
     // authenticated staff routes here 
 
     // Hotel Booking
-    Route::post('bookHotel/{id}' , [hotelBookingController::class , 'bookHotel']);
-    Route::get('allResrevations' , [hotelBookingController::class , 'allResrevation']);
+    Route::post('hotel/book/{id}' , [hotelBookingController::class , 'bookHotel']);
+    Route::get('hotel/reserv/all' , [hotelBookingController::class , 'allResrevation']);
     
     
     // Booking Car
-    Route::post('bookCar', [CarBookController::class, 'bookCar']);
-    Route::get('allReserv/car', [CarBookController::class, 'index']);
+    Route::post('car/book/{id}', [CarBookController::class, 'bookCar']);
+    Route::get('car/reserv/all', [CarBookController::class, 'index']);
 
     // Add Destenatin To Faovrite 
-    Route::get('addToFav/{id}', [favoritesController::class, 'addToFav']);
-    Route::get('allFav' , [favoritesController::class , 'allFav']);
+    Route::get('fav/add/{id}', [favoritesController::class, 'addToFav']);
+    Route::get('fav/all' , [favoritesController::class , 'allFav']);
 
 
     // Booking flight
     Route::post('flight/book/{id}' , [flightBookingController::class , 'bookFlight']);
-    Route::get('all/res/flights' ,[flightBookingController::class , 'allReserv']);
+    Route::get('flight/resrv/all' ,[flightBookingController::class , 'allReserv']);
 
 
     Route::get('logout', [LoginController::class, 'userLogout']);
