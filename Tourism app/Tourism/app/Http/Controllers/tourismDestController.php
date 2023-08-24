@@ -18,6 +18,7 @@ class tourismDestController extends Controller
 
         $data = $destenations->map(function ($dest) {
             return [
+                'id'=> $dest->id,
                 'name' => $dest->name,
                 'details' => $dest->details,
                 'category' => $dest->category->name,

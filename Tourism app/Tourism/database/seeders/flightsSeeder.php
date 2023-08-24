@@ -18,19 +18,15 @@ class flightsSeeder extends Seeder
      */
     public function run()
     {
-        $images = Image::all()->pluck('id')->toArray();
+        // $image = Image::where('data' , 'LIKE' , '%flight%')->pluck('id')->first();
 
         for ($i = 0; $i < 10; $i++) {
 
             $price = random_int(500, 1000);
-            $randKey2 = array_rand($images);
+            
 
             $current_date = Carbon::now();
             $random_date = $current_date->addDays(rand(5,20));
-
-            // $current_time = now();
-            // $random_time = $current_time->addHours(rand(0, 59));
-            // $formatted_time = strftime('%H:%M:%S', $random_time);
 
 
 
@@ -49,7 +45,7 @@ class flightsSeeder extends Seeder
                 'to' => Str::random(5),
                 'date'=> $random_date,
                 'time' => $random_time,
-                'img_id' => $images[$randKey2],
+                'img_id' => 1,
                 'company'=> Str::random(8),
                 'ticket_price'=> $price
             ]);

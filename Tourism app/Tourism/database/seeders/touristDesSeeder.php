@@ -20,10 +20,10 @@ class touristDesSeeder extends Seeder
     public function run()
     {
         $countries = Country::all()->pluck('id')->toArray();
-        $images = Image::all()->pluck('id')->toArray();
+        $images = Image::where('data', 'LIKE', '%dest%')->pluck('id')->toArray();
         $categories = Category::all()->pluck('id')->toArray();
         
-        $name = array('bloudan', 'the umayyad mosque', 'al hamidya market' , 'somewhere' , 'new' );
+        $name = array('dest1', 'dest2', 'dest3' , 'dest4' , 'dest5' );
         $details = array(
             ' is a  beatutiful mountainchain',
             'is an archaeological mosque',
@@ -41,7 +41,7 @@ class touristDesSeeder extends Seeder
 
 
         //create seeding data
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 4; $i++) {
 
             $randKey = array_rand($countries);
             $randKey2 = array_rand($images);

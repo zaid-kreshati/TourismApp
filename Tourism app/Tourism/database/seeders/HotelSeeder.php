@@ -19,9 +19,10 @@ class HotelSeeder extends Seeder
     public function run()
     {
         $countries = Country::all()->pluck('id')->toArray();
-        $images = Image::all()->pluck('id')->toArray();
 
-        for($i=0;$i<10;$i++) {
+        $images = Image::where('data', 'LIKE', 'hotel%')->pluck('id')->toArray();
+
+        for($i=0;$i<6;$i++) {
 
             $rating = random_int(3,5);
             $price = random_int(300,600);

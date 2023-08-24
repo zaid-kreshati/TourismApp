@@ -10,6 +10,7 @@ use App\Http\Controllers\hotelBookingController;
 use App\Http\Controllers\CarOfficeController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use App\Http\Controllers\CarsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+
 
 Route::post('admin/login', [LoginController::class, 'adminLogin'])->name('adminLogin');
 Route::post('admin/register', [LoginController::class, 'adminRegister'])->name('adminRegister');

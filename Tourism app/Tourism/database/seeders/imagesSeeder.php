@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Image;
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Storage;
 use Str;
 
 class imagesSeeder extends Seeder
@@ -16,10 +18,19 @@ class imagesSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<8;$i++) {
-            $data = Str::random(5);
+
+        $files = Storage::disk('public')->files('images');
+
+        //delete the old data to create new one
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('images')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        
+        foreach ($files as $img) {
+            $data = basename($img);
+
             Image::create([
-                'data'=>$data,
+                'data' => $data,
             ]);
         }
     }

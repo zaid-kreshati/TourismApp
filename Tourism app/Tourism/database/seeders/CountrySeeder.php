@@ -19,6 +19,8 @@ class countrySeeder extends Seeder
     public function run()
     {
         $name = array('Syria', 'Germany', 'UAE', 'Lebanon', 'Saudi');
+        $images = array('13' , '10' , '14' , '11' , '12');
+        // $images = Image::where('data', 'LIKE', '%car%')->pluck('id')->toArray();
         $details = array(
             ' is beautifull country locatedin the middle east',
             '  a nice country located in central Europe',
@@ -27,7 +29,7 @@ class countrySeeder extends Seeder
             'abcd efg hijk'
         );
 
-        $images = Image::all()->pluck('id')->toArray();
+        // $images = Image::all()->pluck('id')->toArray();
 
 
         //delete the old data to create new one
@@ -39,14 +41,14 @@ class countrySeeder extends Seeder
         //create seeding data
         for ($i = 0; $i < 5; $i++) {
 
-            $randKey2 = array_rand($images);
+            // $randKey2 = array_rand($images);
             $randKey = array_rand($details);
 
             Country::query()->create([
                 'name' => $name[$i],
                 'details' => $details[$randKey],
                 'popular' => mt_rand(0, 1),
-                'img_id' => $images[$randKey2]
+                'img_id' => $images[$i]
 
             ]);
         }

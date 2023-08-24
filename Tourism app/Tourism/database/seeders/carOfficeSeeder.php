@@ -18,8 +18,8 @@ class carOfficeSeeder extends Seeder
     public function run()
     {
 
-        $name=  array('caro1','caro2','caro3');
-        $phone=  array('0999','0988','0977');
+        $name=  array('office 1','office 2','office 3');
+        $phone=  array('099988','0932188','0904377');
         $countries = Country::all()->pluck('id')->toArray();
 
         //delete the old data to create new one
