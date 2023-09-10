@@ -1,0 +1,1909 @@
+{
+	"info": {
+		"_postman_id": "1b253ae6-f901-434b-aba4-eebc0ab2ea6e",
+		"name": "Tourism Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "user_login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "zaid",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "zaid@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "mohamed",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mohamed@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTE3ZDAzNDA2MWU5YTMxOGQ0ZmJiOTE3MDg2ODZkNjk3MmE2NTRjYjYzYjQ3OTYyNTdlNzNkNTBiZjRmNDFlM2I5NmM2ZDZlYzE4ODBjN2EiLCJpYXQiOjE2ODQ3NjAxNzUuOTMyNzIxLCJuYmYiOjE2ODQ3NjAxNzUuOTMyNzQ4LCJleHAiOjE3MTYzODI1NzUuNDA1MTgzLCJzdWIiOiIxIiwic2NvcGVzIjpbInVzZXIiXX0.tH3N58byQDwmMdv7ZtDSFvwK92yW0AGPVT_TWs1oXJ7FVVb-cHTkpSeKRyA-D-1BIrSfRaReL2rq9H8XtkAetZStLit8OeoiUIQMz1DYTUlcJDvL9srzOjY5M5d4UrQGNc_iYUsj5YXsUYSio-xEOoKDjSN9gxzMIABjG9__3pJ-RvXqQILLtYBbwc5Uo-pH_nTBojeKdlJD2r_x0q1Ex5Q90hd7aXyElklKWVfDL8NQ4dqdODh3OFAU_5ZUxvgyRvOmotawsENngG5lxS7yelKToQStUcAw5ucMTZHg62EqdIT8thpFf7oPS6-0EJTuCLOJtPEVDb9aK2ru7-OGOEz0LYOJB6Cf9Enz_Y5ycO8ECsSJOspGgsId9KRBs0UT5ejKz_chnFddO5jvDVEiuFoavuX-eAkKrHLBlZNSU1WIxpUBABniOT8rP9G5U6EJ8kxAuvAg1AyRaVfZXE944FBKTCvF-iL7SVp__nS9kbh080PVa2nrhChX2Y7x6Dr1OLy0CVU6otz_gmBQ4QGqDf27UeRR6S37K9M27GBxYh034PdGlyD7_U1ll_haHKMjNefBraapRIu7ev9z9iV_UMlxGzbquhNfKPw7XkCJX5eFxH_bkM2p-g_TPPA6v2pGT9wh5ggmNGhLSnS4avpDFNbMUsNbEzVNEbrfWwxmx34",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "admin_register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "zz@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin_login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "zz@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin_logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzEzMDQyODc1ZTc2NzJmZWYxZmVmMGFmYWE5ODE5YjBjYTg1MGZmZmY0Yjc3NGUwYjRiOGVmYWMzOGE4YWRiZmM5MTQ2ODhjMzFkMzEwYzEiLCJpYXQiOjE2ODQ5MjYxNzguMjYxNzU3LCJuYmYiOjE2ODQ5MjYxNzguMjYxNzYxLCJleHAiOjE3MTY1NDg1NzcuNjg5NTIsInN1YiI6IjMiLCJzY29wZXMiOlsiYWRtaW4iXX0.WJu4B9uj3KPZN0ZDGE6-Te9q1X6B6VyjGRkp4XJWeQ14Ff6zvuot6Mjle85Gt9NBk4szq9flQRSzS5tR_S39Vknim3pYsZ9O1TG92urQRsIVEQT-LMDgb9ETY_UB1pIZWuaDlatqa9c1TJlBQmIh6vuoGHydcY8S_oSksGZOryJry3EMy4uET5rh3IX6P1qoKEeAJadEjnxB2OWD_zlofnEzmuAq1ywGY6Hk-OveRnwdGRQu_qJFl9_fVMNmoWCADNkh7K8TYS9kALILNriDb_haQX886I5gLHnN2VlAojL6HZ2VVzhKaC6XsYHvHmpzr2erelm5sx4vwnB3c7OK37Q7ROUlTbn_O-UvNLsANRCWZCJRGYAB8brnS1gbd5ER6Nn3xgfL8tsNG6kPPkRLDkx_LoiDf9YXGCaRHUrX9AtirlD29tcTp1SmgLb2jkQq8zzLr4BWHX5lIbEqbAvLNkVXLWLLjDpVrTZsfz4lx1Z4xje-GETPufXD65cNWc0lsWAd4qikKckl3rF9o1z5LxCbixA70hWrie_rl0BIJ-V1cvaxe52gRm64h2YBRaw6Q93rqG9c1mZ5l7Qx-wl1lx5V8iUx7F0bIL4H4s13hTajiqq2p6faEyggaCqW5MMPzJ6Spe26xSRnsLcAKvwmbZ7AX0cyGlQucqS1Ctkpm-w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "get all countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/countries/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"countries",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get most popular",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/countries/popular",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"countries",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search for country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/countries/search/S",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"countries",
+								"search",
+								"S"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get details country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/country/details/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"country",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New country With image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Spain",
+									"type": "default"
+								},
+								{
+									"key": "most_popular",
+									"value": "true",
+									"type": "default"
+								},
+								{
+									"key": "details",
+									"value": "this is some details",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/noor/Videos/Captures/3uTools 10_20_2022 7_20_28 PM.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/country/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"country",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "get_all_categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ctagories/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ctagories",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get destnations by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/destinations/ByCateg/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"destinations",
+								"ByCateg",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sea",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/add_category",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"add_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "coast",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/update_category/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"update_category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/delete_category/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"delete_category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tourist Destinations",
+			"item": [
+				{
+					"name": "get all tourist destinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dest/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dest",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destinations in country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dest/in/country/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dest",
+								"in",
+								"country",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search for destinations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjg0Nzc5NTZiMDk4NzUwNGFiZTc4MGE2NDAxNGJkNzUzZTc4MzdjZWQ3MTUwY2U0MTYzN2MxMzAzZGUwNzg3MTI3MTQxMzA1MWZmY2E3NDEiLCJpYXQiOjE2ODQ5NTA2NjIuNzUzNDMxLCJuYmYiOjE2ODQ5NTA2NjIuNzUzNDMzLCJleHAiOjE3MTY1NzMwNjIuNzI1MDA3LCJzdWIiOiIxIiwic2NvcGVzIjpbImFkbWluIl19.bKGUK4DU0Lkv9eA5xNAAkISEkgm5XgRCz-_kurMUmjEcWDTE0JquQwudb39WnCc9tRRslOxTLwtBVJ-7ymSHRSz4zaxyOCbXUnXGzVYEKRdHONs0C3y6xQcJoiQPJKBhgLURNtq08oZXuLfrGTleIdYlP_SJf8ttZx5N5I564Qcq7kK9vyTRJny47K-G0AzThTeWbe2nstBDXz7QridKtcQV38OZ4syBVhIWkeDn6HS3q93bjADeQJ0wh-8cnV1VNBtlYLAxtEnTLpVmn1XQu8nh-uK0kGIe5YqkN40tiZUGBM9dtIgKwDpyMLbp6Z9rdng4ue6pUDBV5aY1WupKRmxnp1rAP7i8W31lwPYpUdHxp4RcdbKhw7CPVUYv8KVPDvTp_uGaSFfg-TZmO3nFqkyBh4TeACKz4FkLPWps21i9iki4U-tQW8oVs69DPyQ37MQaAs26PWgTaJYaH2HjlgH1zAe2jzW5vUl8EChbZCr1uu1ZpJun7twBbd64u3ay8shE6Y432FUR5BePyrabGV24Fs8G5TVaFVJnLmvdUZvIfg0ymAhlyYAeJh3fjwWTeBfdxytiWIYd_1kMkhf01VZrOV779W4kzy8mfeGAYiF-YZNnX5CG2OyZCnpOMl1i-MkiQ7T1mL55Nxw9yKuJSTS9GOTzS9ockGUz_y5uVmo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/dest/search/blo",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dest",
+								"search",
+								"blo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Tourism with image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTgwZGQ3Y2RlZTlkNDI1YTc1ZTM5Mjc2ZjU5OGQ2MWM3ZGJmZTc2YzkyZDMxOWEwOTBlYTMwMDRmZjk0ODUzZjQ1YzY5ZjFjZTU4YjJiOTAiLCJpYXQiOjE2OTA5ODI4ODYuNTgwNTEyLCJuYmYiOjE2OTA5ODI4ODYuNTgwNTMzLCJleHAiOjE3MjI2MDUyODYuNTY5ODk4LCJzdWIiOiIxIiwic2NvcGVzIjpbImFkbWluIl19.Q7nGqDuqF5d7kVT-32gXihzitzINCNAwxXTTdqYiL9tdtYNDL7WZnAjwQoOPucASan85HhFwhY8mafBXV8Y8SQitQWFBglbl2Ront03Ka_CXYJNSOkXj0X-BMjQdZK4lVacbWjHEACQoevjEYR3JXOTwhpcX-aKtx1V_hSym9C4-Scs4dkkBH9rmUo643QXlqwFWjVGns2sfi0z6tZ81n5YU_Xr2__DnFzbzU9N7jR0i62o3QdnPkxrzTw9tnIkMTK3BFZyyH96emxj2t_geus5N6lp2XPrrMAlErHqu4VeJzv1nl0A97khLibKLoT9bbGvyGMWPpRS00dYls3vU5SFrfkI3lUbOI3cmEq-GYq4mVl4F6hzj5gWsqqTcW8lDKv9AoLs_X0TYtVDgGo4XCspKmsAszxUL1xDzOdLvIMuXShG2TsogouQ-U9Ud6wuM9PDa7yefm_17KdSBZgWJ7w8Q1xKBBN07os0bhoKW-LbsYdA6uWp0LN_DADUTadkgAecnjTGnvx4QsPJ0NjPzZP-SG0-VS5dlk51eOrQJg_kg6vSXOIbR7edcCSaY02zkGWKL9acjwZ3SARKn2wp8BCYlPy65pbxlF3u2W0B-uB4Z_ikbjkcU1oN63NH6Ydj5fDcnMOjZEcwtVy27chU4Ns5r1ddUJmY-TVI31z7qQjU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "UAE",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "market",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "new Destination",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "it's a beautiful place ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/E:/Tourism app/photo1682857399.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/addDest",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"addDest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete touristdes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/delete_TouristDes/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"delete_TouristDes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_touristdes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "categ_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "cham_center",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "wow",
+									"type": "text"
+								},
+								{
+									"key": "img_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/update_TouristDes/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"update_TouristDes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car Office",
+			"item": [
+				{
+					"name": "get all car offices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/office/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "office By country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/office/in/country/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								"in",
+								"country",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_carOffice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Syria",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "zzoffice",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0911",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/add_CarOffice",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_CarOffice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_carOffice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "country",
+									"value": "Lebanon",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "another",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09998877",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update_CarOffice/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_CarOffice",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_carOffice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiN2RiY2VlZmJiN2QzOWVmY2Y2NWRiMGEwNGM0MDZkNTVhNTNhZDkxMjdhYjI0ZTkxZTg0NWRiZjVkODM3MTU5Y2U0ZTc5OTAxZmZlOWI2YTkiLCJpYXQiOjE2ODU2NDE3NTguNDYzOTc2LCJuYmYiOjE2ODU2NDE3NTguNDYzOTgsImV4cCI6MTcxNzI2NDE1OC40NTQ1NjksInN1YiI6IjUiLCJzY29wZXMiOlsiYWRtaW4iXX0.MwKAr2WY7lsJHhpylQqh6bEwB1MCOoefRsAm1HMRMXX90ac4mCf40RCwVe4PNPSRnPlz8H8cw4gxD-X58rWfrxCPrKQQnQW_oBSArhlj-9wnCtQAwkgAY3djwt0QSQG3xgt4hUXAaz3tbnB_F8DLhKQRnuvrzDTx9GTZ3HxjiUoGX6tFq-gC-jLcaemE9gnW4c8SxI4bVVSevRzykHLKGT-FtyuHee7Y334ljIXdLv4QX9bI9JKTXu9JVrBn7dvhkyYCSQ_DIhjXGm6hbXmEvhEenuecpjcDScxuRCn1YaXOLEUr_2ebUGPVsf33Fl-BJOkzJ19N0l3p9i0HTzXiyV620jj91r_i6hnaHUY8HaWRkyt1_2f6fpXV7xddDABINe60csNLDhmYD_cPB4IECEkCgTWxoWDlh8Amh0sJX3BUCk0_Em9miZvES5LSpbXA6qHNRCg0HF9yfoDYvnemjPu5Oi_vR0GU8AMoHNPzc4j0jGGWc1bE0ndC_kpayz4h2ubr4rJ7UeAMnATDcIJ-fsKn5WTmlbpjQO4CjG0PyQbRscnV_uM0UbOzP6dnoUgNa1xDwmJB9tgXmdz3Y_-GYdOisjzeJ4wUIO-FWvkJV6v0IOnjc7SmblfbKrZLrFnVqD2MOqqVVQa4MAs5VPOtk4lk01sQbaFa1ZH1tbYgRL4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/delete_CarOffice/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"delete_CarOffice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "get all available cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cars in specific office",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cars/in/office/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								"in",
+								"office",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "toyota",
+									"type": "text"
+								},
+								{
+									"key": "num_person",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "price_day",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/noor/Videos/Captures/3uTools 10_20_2022 7_21_20 PM.png"
+								},
+								{
+									"key": "office",
+									"value": "caro1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/add_Car",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"add_Car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updata_car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "toyota",
+									"type": "text"
+								},
+								{
+									"key": "num_person",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "price_day",
+									"value": "1000000",
+									"type": "text"
+								},
+								{
+									"key": "isRental",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "office_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/update_Car/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"update_Car",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxYTdkNDUxM2EzZGJiM2I1NzBkY2U1MTRlZDY5NGM2ZjE0YmM0MzQ4ZjA0YzlkYjA1NjJiMTE2MDBmMWZmZWZkZWVlZWQyZDY4NTcyMGIiLCJpYXQiOjE2ODU5OTI0NDQuMTQ2NTk5LCJuYmYiOjE2ODU5OTI0NDQuMTQ2NjAyLCJleHAiOjE3MTc2MTQ4NDQuMTM4NzQ0LCJzdWIiOiI1Iiwic2NvcGVzIjpbImFkbWluIl19.nunHl3-xGVp8YnxAX0uW7Jt32ZZpO-RQPHlGJU2GE_DJoAgGGyR1_NPLQdbqXzhBPouR3LoT8o2ZN4okF76x3IxTHb7cKYYZGE655_ULFHOtBC21swYVztnnNTXovwyw8-KqgJXMg8BFEJQluq5XROh5nH4j42Jh0mZJKSVeMDJ_y18v6WcbHbU796WnBcRbZXplGf0MWTNIvtn9OzbTr5tNTd0urdh-lY8P23XbTAnMBrwA2CPZ-1VqHGqSBbpTyssoh7_tl1qTslmqmNt6Ej3gx1ovA_TMzUPPZw7V2l0TE-s32xcDWvkMLlThgXfV_OPvsno-JBNXXpvQy4S4rpxSJJMMudeMnyQRWh0k7R4YTsMq7GSl5W5X8vTY8kKtfigk2mjEpJ-a7PYEJl7wGJpmOctuifz5ve4-PBVRZAqZIIBjZ2RMDHivBMtPo8lfWvWiO-b5jm5Pkg-xlJcMioyNdckJNVGZVFELiyRjueF0D_S-6g6VUJm9E4lK6dZALRnJtYfBS6CjaikmAwLPPstnL1wkCg58sJXd4hhSauqmLRHjlo_ErTG-BFO3PYHlPrUA_GAZ7X4xnFZRzJkjRLihVqg2wHPljmwLDOyWXeglLGkgx4QWodPFMww8nh7sKBsin4FFvjDSjkrJWDOHZPpFlWLohOHtJgdcLahQflk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/delete_Car/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"delete_Car",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Car",
+			"item": [
+				{
+					"name": "Book Car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmE5Y2Y1YTYzZTllNjQzNTA1NDI2NTk2MDY2NGQ3YmYyNTg3NTNkYzljNGZiZjI3YTkzMjgzZDlkZmM5NWI2MWYyMzA1MjU5MTFlZjQ3M2UiLCJpYXQiOjE2OTEwNTQxNjYuNjkzNzcxLCJuYmYiOjE2OTEwNTQxNjYuNjkzNzc3LCJleHAiOjE3MjI2NzY1NjYuNjc0NDAyLCJzdWIiOiI0Iiwic2NvcGVzIjpbInVzZXIiXX0.HT-7k4uehC8r2_UGSCudcwI8fl-niT5chy95z3qpcMowjgkyP6e_MOUfsTCrSIm5cwOHNJJMjkDOPl1GpFKjsDZEOFU0ei-5K0vFTpw7IbIHw5llHShVyez9Dc5NiCalHLNppgulvNRPhhUSIXSosTd-RuvXguZ3u4Tuj5LndTkpKOAMJoe5ulJzzbKvvX98iwhCbMNLLyFH4zcrHpaH-tPe7lCmBK1brTU_Eg8Uw1a4mMREf4L8Inwd5pEUqlQSZJMN_OZTY8mT91L5LHJKOZld0jjFD3PYx9DFHTYl6p3kuC3RHvV2ShyxtKonFdL0ACjQLrYzvDWOehnkw_HPXhvssc69jWqspkBcnIvzgcxSDvOfJdOGEEhui8IiGLdA4RdVCh18nYdjKLRoQIloKYex45KfVqprNayQnl4qhJy883bHsvXa6zuhvL_YRY0vvw8sVQBdXcAgVxoW4mrx2l427HnqOBCbrVldVGJLA1AATRvCA6zSwN9zzqBqW3gpNL2gVxOEarAESblNYO_fEx9P9Zf9-_4f6x66vG68hoIARZOTDRZ4jvQkWpbRRFqFpkjMtDooUM2Q9oMLeOWSS2NcjJ8FQUL19LkSTebIohD6AwX39o1D20jgGGW-o7LaQjTrU9Qb35T-A3mtXUuD0KK5Qzr6-tGNVkjUdtXyeG0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "get_date",
+									"value": "2023-10-01",
+									"type": "text"
+								},
+								{
+									"key": "drop_date",
+									"value": "2023-11-10",
+									"type": "text"
+								},
+								{
+									"key": "car_id",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/car/book/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"car",
+								"book",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all car reseravtions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTI4Mjk3ZDc3ODI2YzMzNGUyZjJiNjExNjI2ZWJhZDgwNTkwOGRmMDVlZjc0MjkxYWMwYTQ2NDQ1ODEwOWNjZjY2OTcyMDg4NTAxMmZmZjYiLCJpYXQiOjE2ODczMzYzNDguNTU4NjgsIm5iZiI6MTY4NzMzNjM0OC41NTg2ODMsImV4cCI6MTcxODk1ODc0OC4zNTYwOTQsInN1YiI6IjMiLCJzY29wZXMiOlsidXNlciJdfQ.fpKIXARZ1ISfwy3jxQmd04u9UZYgx9wvyfW9aGuAVL6zJg36WpZ0aEJ7bMZiKHT_3790BQpblT1DQd_ZQVvUYL6kOp3TbaNnzjGAjzYTVe8FPE0w6y3zXwo0Dj2c0YMDt8RqIp-y1gIRe0p-JosyruF-8XvX5uQ6wCrIEJw0durqxoNXULscrb9sIZdACqZw-og2vX4jclnZOXzaoK3L6oihgNko8kg9qzgy6p4EijbU6nBLZk5LcQN5xIH6CgiChXns4ockdjIT8EO3w1v207hCFVyZ3NiUdfz5jz9KQFmWTWOgiJ_fcZnkPwTnBMzlBUTJXhCCe9N3WisMkW1wnj2-m8JjL94C-_Qrkpe0nUQ8lcjQRiUaW3jb2RpGOG6w_MKha8oR_Z5pUGB73N1PeUDcGYnMtXmyqAvBpfoQvItkzXxOPE7QAT3PgD3X8tRjwBepXEyS2fkRupvOiGbCUiHHZDO5EfvcJX_R8QUcAqWpgyVayndaplmnMnvNeWsakd3YHZyqG6YB94sb8WrIC_CkfQtCTntPXfRCM0Gj1hcpNp22FCjRSJkJDEMolgq-DfNF4TswvlQkqo1fVQh-Xs0siARqtEl3AfUtGLjR0zZzZJp45y-lelZAa_23NTsjCQQl5xQDyeX1W23hIYeP-IMQl5u7klsDiUDlSf8vsvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/car/reserv/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"car",
+								"reserv",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "All Hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/hotel/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"hotel",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Hotels in specific country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/hotel/country/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"hotel",
+								"country",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/hotel/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"hotel",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Four Season",
+									"type": "default"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "default"
+								},
+								{
+									"key": "price_night",
+									"value": "500",
+									"type": "default"
+								},
+								{
+									"key": "country",
+									"value": "Syria",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/noor/Videos/Captures/Figure 2 6_28_2021 2_38_16 PM.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/hotel/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"hotel",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Hotel",
+			"item": [
+				{
+					"name": "Book Hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmE5Y2Y1YTYzZTllNjQzNTA1NDI2NTk2MDY2NGQ3YmYyNTg3NTNkYzljNGZiZjI3YTkzMjgzZDlkZmM5NWI2MWYyMzA1MjU5MTFlZjQ3M2UiLCJpYXQiOjE2OTEwNTQxNjYuNjkzNzcxLCJuYmYiOjE2OTEwNTQxNjYuNjkzNzc3LCJleHAiOjE3MjI2NzY1NjYuNjc0NDAyLCJzdWIiOiI0Iiwic2NvcGVzIjpbInVzZXIiXX0.HT-7k4uehC8r2_UGSCudcwI8fl-niT5chy95z3qpcMowjgkyP6e_MOUfsTCrSIm5cwOHNJJMjkDOPl1GpFKjsDZEOFU0ei-5K0vFTpw7IbIHw5llHShVyez9Dc5NiCalHLNppgulvNRPhhUSIXSosTd-RuvXguZ3u4Tuj5LndTkpKOAMJoe5ulJzzbKvvX98iwhCbMNLLyFH4zcrHpaH-tPe7lCmBK1brTU_Eg8Uw1a4mMREf4L8Inwd5pEUqlQSZJMN_OZTY8mT91L5LHJKOZld0jjFD3PYx9DFHTYl6p3kuC3RHvV2ShyxtKonFdL0ACjQLrYzvDWOehnkw_HPXhvssc69jWqspkBcnIvzgcxSDvOfJdOGEEhui8IiGLdA4RdVCh18nYdjKLRoQIloKYex45KfVqprNayQnl4qhJy883bHsvXa6zuhvL_YRY0vvw8sVQBdXcAgVxoW4mrx2l427HnqOBCbrVldVGJLA1AATRvCA6zSwN9zzqBqW3gpNL2gVxOEarAESblNYO_fEx9P9Zf9-_4f6x66vG68hoIARZOTDRZ4jvQkWpbRRFqFpkjMtDooUM2Q9oMLeOWSS2NcjJ8FQUL19LkSTebIohD6AwX39o1D20jgGGW-o7LaQjTrU9Qb35T-A3mtXUuD0KK5Qzr6-tGNVkjUdtXyeG0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "check_in",
+									"value": "2023-8-6",
+									"type": "default"
+								},
+								{
+									"key": "check_out",
+									"value": "2023-8-10",
+									"type": "default"
+								},
+								{
+									"key": "num_room",
+									"value": "4",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/hotel/book/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"hotel",
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all hotel reservations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTMxZDMzNmU0MDM1NzkxMzY2ZDRjYWY3YzAwNmMxNzU3MWFmYmQ1NzQzYjM0YTA5NDhkNzQ3ZGU0MjZhMmE1MWY3YjJhOGViZmE2ZDgzMWYiLCJpYXQiOjE2OTA5Njk3NzQuNDI0MjY1LCJuYmYiOjE2OTA5Njk3NzQuNDI0MjY4LCJleHAiOjE3MjI1OTIxNzQuNDEwODE3LCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.pkkY26z6qJ5Z1jzA1LJvaOPAeYWhb-1unve5kKrePqrQyNubKt0zNOtssBtrMaZMSY_a2XZju_4pnXLqGNJ8c4K1dawJ3eRY5J7_m_XG5a8vfTxT2yiFyN3Wa5vbQsrTS0amUBm4IEryE-rthqDuus5pxKLZmfFWE5Na7l_wJ8E4Udqw8_KYawII2hR7pFeGc1D6-vN83nwfVjqvaJ9cwTz5EAfV1rZSUwAlJR7auVJOZfADM5tW8R3NjhyGU4vEawFmT5aefH4joX_sQY9woSOS2hLKOyGtC9ChJqFdfw1uPJHNvXMyO1Ue6R7RCRoWcz-Xf2iQ45brzREN7U8fjJEAOOjPB13nbXVPGEKNyhKw_-AgCh7z7yeW5L4Y9kcwSxzUdJAR9IBOJ3CZw_HBt1TpI_UWbUF7NQmchoe4Lebl9g7TD4XT6zsVQ7wmngtlzHtODXc3Hl5eBje7iZhQKFRxn9-cUoJmDDextzVWkGl_RyF8EaM0cCcIL_YfU1arWfTZGHngPrUPGAFx0C9wxd4mIDBcPsRbaKyTlJ9Xw-HrQomTDL3Y00DZpTrY_wn1lfe5it-rD1ptYTplLvcsZonGRP4brQEcQdL74yznSx3YeFYG1yN0zXKTdq4wOL71qBC8neQP4_P6_LwvhZf3UMYiR7UDf99PXSBTP9jIz4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/hotel/reserv/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"hotel",
+								"reserv",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "Add Dest to Fav",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmE5Y2Y1YTYzZTllNjQzNTA1NDI2NTk2MDY2NGQ3YmYyNTg3NTNkYzljNGZiZjI3YTkzMjgzZDlkZmM5NWI2MWYyMzA1MjU5MTFlZjQ3M2UiLCJpYXQiOjE2OTEwNTQxNjYuNjkzNzcxLCJuYmYiOjE2OTEwNTQxNjYuNjkzNzc3LCJleHAiOjE3MjI2NzY1NjYuNjc0NDAyLCJzdWIiOiI0Iiwic2NvcGVzIjpbInVzZXIiXX0.HT-7k4uehC8r2_UGSCudcwI8fl-niT5chy95z3qpcMowjgkyP6e_MOUfsTCrSIm5cwOHNJJMjkDOPl1GpFKjsDZEOFU0ei-5K0vFTpw7IbIHw5llHShVyez9Dc5NiCalHLNppgulvNRPhhUSIXSosTd-RuvXguZ3u4Tuj5LndTkpKOAMJoe5ulJzzbKvvX98iwhCbMNLLyFH4zcrHpaH-tPe7lCmBK1brTU_Eg8Uw1a4mMREf4L8Inwd5pEUqlQSZJMN_OZTY8mT91L5LHJKOZld0jjFD3PYx9DFHTYl6p3kuC3RHvV2ShyxtKonFdL0ACjQLrYzvDWOehnkw_HPXhvssc69jWqspkBcnIvzgcxSDvOfJdOGEEhui8IiGLdA4RdVCh18nYdjKLRoQIloKYex45KfVqprNayQnl4qhJy883bHsvXa6zuhvL_YRY0vvw8sVQBdXcAgVxoW4mrx2l427HnqOBCbrVldVGJLA1AATRvCA6zSwN9zzqBqW3gpNL2gVxOEarAESblNYO_fEx9P9Zf9-_4f6x66vG68hoIARZOTDRZ4jvQkWpbRRFqFpkjMtDooUM2Q9oMLeOWSS2NcjJ8FQUL19LkSTebIohD6AwX39o1D20jgGGW-o7LaQjTrU9Qb35T-A3mtXUuD0KK5Qzr6-tGNVkjUdtXyeG0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/fav/add/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"fav",
+								"add",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Fav",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTMxZDMzNmU0MDM1NzkxMzY2ZDRjYWY3YzAwNmMxNzU3MWFmYmQ1NzQzYjM0YTA5NDhkNzQ3ZGU0MjZhMmE1MWY3YjJhOGViZmE2ZDgzMWYiLCJpYXQiOjE2OTA5Njk3NzQuNDI0MjY1LCJuYmYiOjE2OTA5Njk3NzQuNDI0MjY4LCJleHAiOjE3MjI1OTIxNzQuNDEwODE3LCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.pkkY26z6qJ5Z1jzA1LJvaOPAeYWhb-1unve5kKrePqrQyNubKt0zNOtssBtrMaZMSY_a2XZju_4pnXLqGNJ8c4K1dawJ3eRY5J7_m_XG5a8vfTxT2yiFyN3Wa5vbQsrTS0amUBm4IEryE-rthqDuus5pxKLZmfFWE5Na7l_wJ8E4Udqw8_KYawII2hR7pFeGc1D6-vN83nwfVjqvaJ9cwTz5EAfV1rZSUwAlJR7auVJOZfADM5tW8R3NjhyGU4vEawFmT5aefH4joX_sQY9woSOS2hLKOyGtC9ChJqFdfw1uPJHNvXMyO1Ue6R7RCRoWcz-Xf2iQ45brzREN7U8fjJEAOOjPB13nbXVPGEKNyhKw_-AgCh7z7yeW5L4Y9kcwSxzUdJAR9IBOJ3CZw_HBt1TpI_UWbUF7NQmchoe4Lebl9g7TD4XT6zsVQ7wmngtlzHtODXc3Hl5eBje7iZhQKFRxn9-cUoJmDDextzVWkGl_RyF8EaM0cCcIL_YfU1arWfTZGHngPrUPGAFx0C9wxd4mIDBcPsRbaKyTlJ9Xw-HrQomTDL3Y00DZpTrY_wn1lfe5it-rD1ptYTplLvcsZonGRP4brQEcQdL74yznSx3YeFYG1yN0zXKTdq4wOL71qBC8neQP4_P6_LwvhZf3UMYiR7UDf99PXSBTP9jIz4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/fav/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"fav",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flights",
+			"item": [
+				{
+					"name": "get all flights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flight/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flight",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get flight details by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flight/details/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flight",
+								"details",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search For flight 'From To'",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flight/search/cham",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flight",
+								"search",
+								"cham"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Flight With image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "from",
+									"value": "Damas",
+									"type": "default"
+								},
+								{
+									"key": "to",
+									"value": "dubai",
+									"type": "default"
+								},
+								{
+									"key": "ticket_price",
+									"value": "900",
+									"type": "default"
+								},
+								{
+									"key": "date",
+									"value": "2023-8-28",
+									"type": "default"
+								},
+								{
+									"key": "time",
+									"value": "10:15:00",
+									"type": "default"
+								},
+								{
+									"key": "company",
+									"value": "Cham Wings",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/E:/Tourism app/photo1682857399.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flight/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flight",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Flight",
+			"item": [
+				{
+					"name": "Book Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmE5Y2Y1YTYzZTllNjQzNTA1NDI2NTk2MDY2NGQ3YmYyNTg3NTNkYzljNGZiZjI3YTkzMjgzZDlkZmM5NWI2MWYyMzA1MjU5MTFlZjQ3M2UiLCJpYXQiOjE2OTEwNTQxNjYuNjkzNzcxLCJuYmYiOjE2OTEwNTQxNjYuNjkzNzc3LCJleHAiOjE3MjI2NzY1NjYuNjc0NDAyLCJzdWIiOiI0Iiwic2NvcGVzIjpbInVzZXIiXX0.HT-7k4uehC8r2_UGSCudcwI8fl-niT5chy95z3qpcMowjgkyP6e_MOUfsTCrSIm5cwOHNJJMjkDOPl1GpFKjsDZEOFU0ei-5K0vFTpw7IbIHw5llHShVyez9Dc5NiCalHLNppgulvNRPhhUSIXSosTd-RuvXguZ3u4Tuj5LndTkpKOAMJoe5ulJzzbKvvX98iwhCbMNLLyFH4zcrHpaH-tPe7lCmBK1brTU_Eg8Uw1a4mMREf4L8Inwd5pEUqlQSZJMN_OZTY8mT91L5LHJKOZld0jjFD3PYx9DFHTYl6p3kuC3RHvV2ShyxtKonFdL0ACjQLrYzvDWOehnkw_HPXhvssc69jWqspkBcnIvzgcxSDvOfJdOGEEhui8IiGLdA4RdVCh18nYdjKLRoQIloKYex45KfVqprNayQnl4qhJy883bHsvXa6zuhvL_YRY0vvw8sVQBdXcAgVxoW4mrx2l427HnqOBCbrVldVGJLA1AATRvCA6zSwN9zzqBqW3gpNL2gVxOEarAESblNYO_fEx9P9Zf9-_4f6x66vG68hoIARZOTDRZ4jvQkWpbRRFqFpkjMtDooUM2Q9oMLeOWSS2NcjJ8FQUL19LkSTebIohD6AwX39o1D20jgGGW-o7LaQjTrU9Qb35T-A3mtXUuD0KK5Qzr6-tGNVkjUdtXyeG0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "num_person",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/flight/book/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"flight",
+								"book",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all flight reservations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTMxZDMzNmU0MDM1NzkxMzY2ZDRjYWY3YzAwNmMxNzU3MWFmYmQ1NzQzYjM0YTA5NDhkNzQ3ZGU0MjZhMmE1MWY3YjJhOGViZmE2ZDgzMWYiLCJpYXQiOjE2OTA5Njk3NzQuNDI0MjY1LCJuYmYiOjE2OTA5Njk3NzQuNDI0MjY4LCJleHAiOjE3MjI1OTIxNzQuNDEwODE3LCJzdWIiOiIyIiwic2NvcGVzIjpbInVzZXIiXX0.pkkY26z6qJ5Z1jzA1LJvaOPAeYWhb-1unve5kKrePqrQyNubKt0zNOtssBtrMaZMSY_a2XZju_4pnXLqGNJ8c4K1dawJ3eRY5J7_m_XG5a8vfTxT2yiFyN3Wa5vbQsrTS0amUBm4IEryE-rthqDuus5pxKLZmfFWE5Na7l_wJ8E4Udqw8_KYawII2hR7pFeGc1D6-vN83nwfVjqvaJ9cwTz5EAfV1rZSUwAlJR7auVJOZfADM5tW8R3NjhyGU4vEawFmT5aefH4joX_sQY9woSOS2hLKOyGtC9ChJqFdfw1uPJHNvXMyO1Ue6R7RCRoWcz-Xf2iQ45brzREN7U8fjJEAOOjPB13nbXVPGEKNyhKw_-AgCh7z7yeW5L4Y9kcwSxzUdJAR9IBOJ3CZw_HBt1TpI_UWbUF7NQmchoe4Lebl9g7TD4XT6zsVQ7wmngtlzHtODXc3Hl5eBje7iZhQKFRxn9-cUoJmDDextzVWkGl_RyF8EaM0cCcIL_YfU1arWfTZGHngPrUPGAFx0C9wxd4mIDBcPsRbaKyTlJ9Xw-HrQomTDL3Y00DZpTrY_wn1lfe5it-rD1ptYTplLvcsZonGRP4brQEcQdL74yznSx3YeFYG1yN0zXKTdq4wOL71qBC8neQP4_P6_LwvhZf3UMYiR7UDf99PXSBTP9jIz4g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/flight/resrv/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"flight",
+								"resrv",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
