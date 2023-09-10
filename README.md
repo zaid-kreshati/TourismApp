@@ -39,20 +39,25 @@ To set up the Travelova Tourism Management System locally, follow these steps:
 4. Run the database migrations to create the required tables:
 
    ````shell
+   php artisan migrate --path=database/migrations/2023_05_1_131300_create_images_table.php
+   php artisan migrate --path=database/migrations/2023_05_01_140822_create_countries_table.php
+   php artisan migrate --path=database/migrations/2023_05_01_140740_create_categories_table.php
+   php artisan migrate --path=database/migrations/2023_05_02_153353_create_tourist_des_table.php
    php artisan migrate
-   ```
+
+   
 
 5. Seed the database with initial data:
 
    ````shell
    php artisan db:seed
-   ```
+   
 
 6. Start the Laravel development server:
 
    ````shell
    php artisan serve
-   ```
+   
 
 7. Import the provided Postman collection (`Travelova.postman_collection.json`) into Postman.
 8. Configure the environment variables in Postman to match your local setup.
