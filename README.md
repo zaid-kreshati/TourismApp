@@ -18,7 +18,7 @@ Travelova is a comprehensive tourism management system that allows users to effo
 
 - **Flight Booking:** Users can view available flights and book tickets by providing the necessary flight details. The application streamlines the booking process and allows users to manage their flight reservations efficiently.
 
-- **Reservation Management:** Users can easily manage their reservations through the application. The system organizes reservation information in a powerful database, supporting search, filtering, and updating capabilities.
+- **Email Notifications:** The application sends email notifications to users for various events. Users receive emails when they add a destination to their favorites, book a hotel, rent a car, or book a flight. These notifications keep users informed about their travel activities.
 
 ## Technologies Used
 
