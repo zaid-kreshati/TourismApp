@@ -1,64 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Travelova - Tourism Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Travelova is a comprehensive tourism management system that allows users to effortlessly book airline tickets, hotel reservations, and rent cars. The application is built using the Laravel framework, providing a powerful and scalable backend for managing the system's functionality.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **User Authentication:** Users can register and log in to the application, enabling them to access personalized features and manage their reservations securely.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Destination Search:** Users can search for their desired travel destinations, making it easy to find the perfect location for their next trip.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Favorite Destinations:** Users can add destinations to their favorites list, allowing them to quickly access and refer to their preferred locations.
 
-## Learning Laravel
+- **Hotel Booking:** Users can browse and book hotel rooms by selecting their preferred dates and location. The application offers a wide range of options to accommodate different preferences and budgets.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Car Rental:** Users can rent cars through the application by selecting the type of vehicle and desired rental period. This feature provides convenience and flexibility for users' transportation needs.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Country Information:** The application provides detailed information about various countries, including attractions, local customs, and travel tips. Users can explore and gather insights to make informed decisions when planning their trips.
 
-## Laravel Sponsors
+- **Flight Booking:** Users can view available flights and book tickets by providing the necessary flight details. The application streamlines the booking process and allows users to manage their flight reservations efficiently.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Email Notifications:** The application sends email notifications to users for various events. Users receive emails when they add a destination to their favorites, book a hotel, rent a car, or book a flight. These notifications keep users informed about their travel activities.
 
-### Premium Partners
+## Technologies Used
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- **Backend Framework:** Laravel
+- **API Development:** Laravel API Resources
+- **Database:** MySQL
+- **API Testing:** Postman
+- **Backend Libraries:** Laravel Livewire, Jetstream, Breeze
+- **Additional Libraries:** Sweet Alert
 
-## Contributing
+## Getting Started
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+To set up the Travelova Tourism Management System locally, follow these steps:
 
-## Code of Conduct
+1. Clone the project repository from GitHub.
+2. Install the necessary dependencies for the Laravel backend using Composer.
+3. Set up a MySQL database and update the database configuration in the `.env` file.
+4. Run the database migrations to create the required tables:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ````shell
+   php artisan migrate --path=database/migrations/2023_05_1_131300_create_images_table.php
+   php artisan migrate --path=database/migrations/2023_05_01_140822_create_countries_table.php
+   php artisan migrate --path=database/migrations/2023_05_01_140740_create_categories_table.php
+   php artisan migrate --path=database/migrations/2023_05_02_153353_create_tourist_des_table.php
+   php artisan migrate
 
-## Security Vulnerabilities
+   
+Passport Error
+php artisan passport:install
+ Kyes Generate
+php artisan migrate:fresh
+php artisan passport:client - - personal
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+multi Auth : Link : https://www.nicesnippets.com/blog/laravel-8-multi-authentication-api-tutorial
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+5. Seed the database with initial data:
+
+   ````shell
+   php artisan db:seed
+   
+
+6. Start the Laravel development server:
+
+   ````shell
+   php artisan serve
+   
+
+7. Import the provided Postman collection (`Travelova.postman_collection.json`) into Postman.
+8. Configure the environment variables in Postman to match your local setup.
+9. You can now use the Postman collection to explore and test the API endpoints.
+
+
+## Conclusion
+
+Travelova is a powerful tourism management system that simplifies the process of booking flights, hotels, and rental cars. With its robust backend built on Laravel and user-friendly API, it provides a seamless experience for both users and administrators. Whether you're planning a leisure trip or business travel, Travelova has the features you need to make your journey smooth and enjoyable.
