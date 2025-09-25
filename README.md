@@ -68,7 +68,7 @@ multi Auth : Link : https://www.nicesnippets.com/blog/laravel-8-multi-authentica
    php artisan serve
    
 
-7. Import the provided Postman collection (`Travelova.postman_collection.json`) into Postman.
+7. Import the provided Postman collection (`postman.postman_collection.json`) into Postman.
 8. Configure the environment variables in Postman to match your local setup.
 9. You can now use the Postman collection to explore and test the API endpoints.
 
