@@ -6,8 +6,8 @@ use App\Models\Image;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Country;
-use DB;
 use Str;
+use Illuminate\Support\Facades\DB;
 
 class countrySeeder extends Seeder
 {
@@ -19,7 +19,6 @@ class countrySeeder extends Seeder
     public function run()
     {
         $name = array('Syria', 'Germany', 'UAE', 'Lebanon', 'Saudi');
-        $images = array('13' , '10' , '14' , '11' , '12');
         // $images = Image::where('data', 'LIKE', '%car%')->pluck('id')->toArray();
         $details = array(
             ' is beautifull country locatedin the middle east',
@@ -33,7 +32,7 @@ class countrySeeder extends Seeder
 
 
         //delete the old data to create new one
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('countries')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
@@ -48,7 +47,7 @@ class countrySeeder extends Seeder
                 'name' => $name[$i],
                 'details' => $details[$randKey],
                 'popular' => mt_rand(0, 1),
-                'img_id' => $images[$i]
+                'img_id' => 1
 
             ]);
         }

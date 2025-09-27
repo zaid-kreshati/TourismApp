@@ -3,11 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\Image;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 use Str;
+use Illuminate\Support\Facades\Log;
 
 class imagesSeeder extends Seeder
 {
@@ -19,7 +20,8 @@ class imagesSeeder extends Seeder
     public function run()
     {
 
-        $files = Storage::disk('public')->files('images');
+        $files = Storage::disk('local')->files('seed_images');
+        Log::info($files);
 
         //delete the old data to create new one
         DB::statement('SET FOREIGN_KEY_CHECKS=0');

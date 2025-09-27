@@ -20,21 +20,20 @@ class HotelSeeder extends Seeder
     {
         $countries = Country::all()->pluck('id')->toArray();
 
-        $images = Image::where('data', 'LIKE', 'hotel%')->pluck('id')->toArray();
 
         for($i=0;$i<6;$i++) {
 
             $rating = random_int(3,5);
             $price = random_int(300,600);
             $randKey = array_rand($countries);
-            $randKey2 = array_rand($images);
+            $randKey2 = 1;
             
             Hotel::create([
                 'name'=> Str::random(5),
                 'rating'=> $rating,
                 'price_night'=> $price,
                 'country_id'=> $countries[$randKey],
-                'img_id'=> $images[$randKey2]
+                'img_id'=> 1
             ]);
         }
     }

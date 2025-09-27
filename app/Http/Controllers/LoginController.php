@@ -6,8 +6,8 @@ use App\Models\Admin;
 use App\Models\User;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
-use Validator;
-use Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -59,6 +59,7 @@ class LoginController extends Controller
 
             $user = User::select('users.*')->find(auth()->guard('user')->user()->id);
             $success = $user;
+
             $success['token'] = $user->createToken('MyApp', ['user'])->accessToken;
             
 

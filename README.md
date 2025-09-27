@@ -39,12 +39,7 @@ To set up the Travelova Tourism Management System locally, follow these steps:
 4. Run the database migrations to create the required tables:
 
    ````shell
-   php artisan migrate --path=database/migrations/2023_05_1_131300_create_images_table.php
-   php artisan migrate --path=database/migrations/2023_05_01_140822_create_countries_table.php
-   php artisan migrate --path=database/migrations/2023_05_01_140740_create_categories_table.php
-   php artisan migrate --path=database/migrations/2023_05_02_153353_create_tourist_des_table.php
    php artisan migrate
-
    
 Passport Error
 php artisan passport:install

@@ -7,7 +7,7 @@ use App\Models\Country;
 use App\Models\Image;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\TouristDes;
 
 class touristDesSeeder extends Seeder
@@ -20,7 +20,6 @@ class touristDesSeeder extends Seeder
     public function run()
     {
         $countries = Country::all()->pluck('id')->toArray();
-        $images = Image::where('data', 'LIKE', '%dest%')->pluck('id')->toArray();
         $categories = Category::all()->pluck('id')->toArray();
         
         $name = array('dest1', 'dest2', 'dest3' , 'dest4' , 'dest5' );
@@ -44,7 +43,6 @@ class touristDesSeeder extends Seeder
         for ($i = 0; $i < 4; $i++) {
 
             $randKey = array_rand($countries);
-            $randKey2 = array_rand($images);
             $randKey3 = array_rand($categories);
 
             TouristDes::query()->create([
@@ -52,7 +50,7 @@ class touristDesSeeder extends Seeder
                 'categ_id' => $categories[$randKey3],
                 'name' => $name[$i],
                 'details' => $details[$i],
-                'img_id' => $images[$randKey2]
+                'img_id' => 1
 
             ]);
         }
